@@ -32,23 +32,23 @@
 ;; Gate metal electrode:
 (sdegeo:create-rectangle (position 0 -0.004 0 )  (position 0.035 -0.05 0 ) "Aluminum" "gate_electrode" )
 ;; spacer oxide between metal gate and metal source:
-(sdegeo:create-rectangle (position 0 0 0 )  (position -0.035 -0.05 0 ) "SiO2" "spacerL" )
+(sdegeo:create-rectangle (position 0 0 0 )  (position -0.040 -0.05 0 ) "SiO2" "spacerL" )
 ;; spacer oxide between metal gate and metal drain:
-(sdegeo:create-rectangle (position 0.035 0 0 )  (position 0.07 -0.05 0 ) "HfO2" "spacerR" )
+(sdegeo:create-rectangle (position 0.035 0 0 )  (position 0.075 -0.05 0 ) "SiO2" "spacerR" )
 ;; Drain metal electrode:
-(sdegeo:create-rectangle (position 0.07 0 0 )  (position 0.105 -0.05 0.0 ) "Aluminum" "drain_electrode" )
+(sdegeo:create-rectangle (position 0.075 0 0 )  (position 0.105 -0.05 0.0 ) "Aluminum" "drain_electrode" )
 ;; Source metal electrode:
-(sdegeo:create-rectangle (position -0.07 0 0 )  (position -0.035 -0.05 0 ) "Aluminum" "source_electrode" )
+(sdegeo:create-rectangle (position -0.07 0 0 )  (position -0.040 -0.05 0 ) "Aluminum" "source_electrode" )
 ;; Body metal electrode:
 (sdegeo:create-rectangle (position -0.07 0.6 0 )  (position 0.105 0.5 0 ) "Aluminum" "body_electrode" )
 ;; silicon under source metal:
-(sdegeo:create-rectangle (position -.07 .02 0 )  (position -0.035 0 0 ) "Silicon" "source_n" )
+(sdegeo:create-rectangle (position -.07 .035 0 )  (position -0.040 0 0 ) "Silicon" "source_n" )
 ;; silicon between silicon under source metal and silicon channel, called source extension:
-(sdegeo:create-rectangle (position -.035 .01 0 )  (position 0 0 0 ) "Silicon" "source_n_ext" )
+(sdegeo:create-rectangle (position -.040 .035 0 )  (position 0 0 0 ) "Silicon" "source_n_ext" )
 ;; silicon between silicon under drain metal and silicon channel, called drain extension:
-(sdegeo:create-rectangle (position .035 .01 0 )  (position .07 0 0 ) "Silicon" "drain_n_ext" )
+(sdegeo:create-rectangle (position .035 .035 0 )  (position .075 0 0 ) "Silicon" "drain_n_ext" )
 ;; silicon under drain metal:
-(sdegeo:create-rectangle (position .07 .02 0 )  (position .105 0 0 ) "Silicon" "drain_n" )
+(sdegeo:create-rectangle (position .075 .035 0 )  (position .105 0 0 ) "Silicon" "drain_n" )
 ;; body silicon:
 (sdegeo:create-rectangle (position -.07 .5 0 )  (position .105 .035 0 ) "Silicon" "body" )
 
@@ -59,13 +59,13 @@
 (sdedr:define-constant-profile "constant_channel_doping" "BoronActiveConcentration" 3e18)
 (sdedr:define-constant-profile-region "constant_channel_doping_placement" "constant_channel_doping" "channel")
 ;; drain extension doping:
-(sdedr:define-constant-profile "constant_drain_ext_doping" "PhosphorusActiveConcentration" 5e+18)
+(sdedr:define-constant-profile "constant_drain_ext_doping" "PhosphorusActiveConcentration" 1e+19)
 (sdedr:define-constant-profile-region "constant_drain_ext_doping_placement" "constant_drain_ext_doping" "drain_n_ext")
 ;; drain doping:
-(sdedr:define-constant-profile "constant_drain_doping" "PhosphorusActiveConcentration" 5e+18)
+(sdedr:define-constant-profile "constant_drain_doping" "PhosphorusActiveConcentration" 5e+19)
 (sdedr:define-constant-profile-region "constant_drain_doping_placement" "constant_drain_doping" "drain_n")
 ;; source extension doping:
-(sdedr:define-constant-profile "constant_source_ext_doping" "PhosphorusActiveConcentration" 5e+19)
+(sdedr:define-constant-profile "constant_source_ext_doping" "PhosphorusActiveConcentration" 1e+19)
 (sdedr:define-constant-profile-region "constant_source_ext_doping_placement" "constant_source_ext_doping" "source_n_ext")
 ;; source doping:
 (sdedr:define-constant-profile "constant_source_doping" "PhosphorusActiveConcentration" 5e+19)

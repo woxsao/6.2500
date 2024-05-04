@@ -1,0 +1,6 @@
+h5py
+ipykernel
+ipywidgets==8.0.5
+ipympl
+numpy
+matplotlib
